@@ -1,0 +1,100 @@
+lvl 0 {
+    ssh bandit0@bandit.labs.overthewire.org -p 2220
+}
+
+lvl 1 {
+	cat readme
+}
+
+lvl 2 {
+	cat ~/-
+}
+
+lvl 3 {
+	cat ~/"--spaces in this filename--"
+}
+
+lvl 4 {
+	cat ~/inhere/...Hiding-From-You
+}
+
+lvl 5 {
+    cd inhere
+    head ~/inhere/*
+}
+
+lvl 6 {
+    find . -type f -size 1033c ! -executable
+    cat ./inhere/maybehere07/.file2
+}
+
+lvl 7 {
+	find / -type f -size 33c -group bandit6 -user bandit7 2> /dev/null
+    cat /var/lib/dpkg/info/bandit7.password
+}
+
+lvl 8 {
+    grep "millionth" data.txt
+}
+
+lvl 9 {
+    sort data.txt | uniq -u
+}
+
+lvl 10 {
+    strings data.txt | grep "=="
+}
+
+lvl 11 {
+    base64 -d data.txt
+}
+
+lvl 12 {
+    cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+}
+
+lvl 13 {
+    mktemp -d /tmp/XXXXXXXXX
+    cd /tmp/ax1qhNJBN
+    cp ~/data.txt .
+
+    xxd -r data.txt > data.bin
+    file data.bin
+
+    mv data.bin data.gz
+    gunzip data.gz
+
+    bzip2 -d data
+
+	tar -xf data
+
+	cat data
+}
+
+lvl 14 {
+	cat sshkey.private
+	nano sshkey14.private
+	chmod 600 sshkey14.private
+
+	ssh -i sshkey14.private bandit14@bandit.labs.overthewire.org -p 2220
+	cat /etc/bandit_pass/bandit14
+}
+
+lvl 15 {
+    cat /etc/bandit_pass/bandit14 | nc localhost 30000
+}
+
+lvl 16 {
+    openssl s_client -connect localhost:30001
+}
+
+lvl 17 {
+    nmap -p 31000-32000 localhost
+    nmap -p 31046,31518,31691,31790,31960 -sV localhost
+    cat /etc/bandit_pass/bandit16 | openssl s_client -quiet -connect localhost:31790
+    exit
+
+    nano ssh17.key
+	chmod 600 ssh17.key
+	ssh -i ssh17.key bandit17@bandit.labs.overthewire.org -p 2220
+}
