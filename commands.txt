@@ -98,3 +98,28 @@ lvl 17 {
 	chmod 600 ssh17.key
 	ssh -i ssh17.key bandit17@bandit.labs.overthewire.org -p 2220
 }
+
+lvl 18 {
+    diff passwords.new passwords.old
+}
+
+lvl 19 {
+	ssh bandit18@bandit.labs.overthewire.org -p 2220 -T
+	cat readme
+}
+
+lvl 20 {
+    ./bandit20-do ls /etc/bandit_pass/
+}
+
+lvl 21 {
+    cat /etc/bandit_pass/bandit20 | nc -l -p 1234
+    ./suconnect 1234
+}
+
+lvl 22 {
+    ls /etc/cron.d/
+    cat /etc/cron.d/cronjob_bandit22
+    cat /usr/bin/cronjob_bandit22.sh
+    cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+}
