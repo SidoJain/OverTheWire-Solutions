@@ -153,7 +153,7 @@ lvl 25 {
     mktemp -d /tmp/XXXXXX
     nano get_pass.sh {
         #!/bin/bash
-		pwd="gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8"
+		pwd="place-password-for-lvl-24-here"
 
 		for i in {0000..9999}
 		do
