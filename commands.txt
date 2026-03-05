@@ -3,19 +3,19 @@ lvl 0 {
 }
 
 lvl 1 {
-	cat readme
+    cat readme
 }
 
 lvl 2 {
-	cat ~/-
+    cat ~/-
 }
 
 lvl 3 {
-	cat ~/"--spaces in this filename--"
+    cat ~/"--spaces in this filename--"
 }
 
 lvl 4 {
-	cat ~/inhere/...Hiding-From-You
+    cat ~/inhere/...Hiding-From-You
 }
 
 lvl 5 {
@@ -29,7 +29,7 @@ lvl 6 {
 }
 
 lvl 7 {
-	find / -type f -size 33c -group bandit6 -user bandit7 2> /dev/null
+    find / -type f -size 33c -group bandit6 -user bandit7 2> /dev/null
     cat /var/lib/dpkg/info/bandit7.password
 }
 
@@ -66,18 +66,18 @@ lvl 13 {
 
     bzip2 -d data
 
-	tar -xf data
+    tar -xf data
 
-	cat data
+    cat data
 }
 
 lvl 14 {
-	cat sshkey.private
-	nano sshkey14.private
-	chmod 600 sshkey14.private
+    cat sshkey.private
+    nano sshkey14.private
+    chmod 600 sshkey14.private
 
-	ssh -i sshkey14.private bandit14@bandit.labs.overthewire.org -p 2220
-	cat /etc/bandit_pass/bandit14
+    ssh -i sshkey14.private bandit14@bandit.labs.overthewire.org -p 2220
+    cat /etc/bandit_pass/bandit14
 }
 
 lvl 15 {
@@ -95,8 +95,8 @@ lvl 17 {
     exit
 
     nano ssh17.key
-	chmod 600 ssh17.key
-	ssh -i ssh17.key bandit17@bandit.labs.overthewire.org -p 2220
+    chmod 600 ssh17.key
+    ssh -i ssh17.key bandit17@bandit.labs.overthewire.org -p 2220
 }
 
 lvl 18 {
@@ -104,8 +104,8 @@ lvl 18 {
 }
 
 lvl 19 {
-	ssh bandit18@bandit.labs.overthewire.org -p 2220 -T
-	cat readme
+    ssh bandit18@bandit.labs.overthewire.org -p 2220 -T
+    cat readme
 }
 
 lvl 20 {
@@ -141,7 +141,7 @@ lvl 24 {
     chmod 777 /tmp/8AWnBX3B
     nano get_pass.sh {
         #!/bin/bash
-		cat /etc/bandit_pass/bandit > /tmp/8AWnBX3B/password.txt
+        cat /etc/bandit_pass/bandit > /tmp/8AWnBX3B/password.txt
     }
 
     chmod 777 /tmp/8AWnBX3B/get_pass.sh
@@ -153,14 +153,84 @@ lvl 25 {
     mktemp -d /tmp/XXXXXX
     nano get_pass.sh {
         #!/bin/bash
-		pwd="place-password-for-lvl-24-here"
+        pwd="place-password-for-lvl-24-here"
 
-		for i in {0000..9999}
-		do
-        	echo "$pwd $i"
-		done
+        for i in {0000..9999}
+        do
+            echo "$pwd $i"
+        done
     }
 
     chmod +x get_pass.sh
-	./get_pass.sh | nc localhost 30002 | grep -v "Wrong"
+    ./get_pass.sh | nc localhost 30002 | grep -v "Wrong"
+}
+
+lvl 26 {
+    cat bandit26.sshkey
+    nano ssh26.key {
+        --- paste RSA ---
+    }
+    chmod 600 ssh26.key
+
+    cat /etc/passwd | grep bandit26
+    cat /usr/bin/showtext
+
+    --- resize terminal window to minimum ---
+    ssh -i ssh26.key bandit26@bandit.labs.overthewire.org -p 2220
+    v
+    :set shell=/bin/bash
+    :shell
+    cat /etc/bandit_pass/bandit26
+}
+
+lvl 27 {
+    ./bandit27-do whoami
+    ./bandit27-do cat /etc/bandit_pass/bandit27
+}
+
+lvl 28 {
+    git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo
+    cd repo
+    cat README
+}
+
+lvl 29 {
+    git clone ssh://bandit28-git@bandit.labs.overthewire.org:2220/home/bandit28-git/repo
+    cd repo
+    cat README.md
+
+    git log
+    git checkout 8b7c651b37ce7a94633b7b7b7c980ded19a16e4f
+    cat README.md
+}
+
+lvl 30 {
+    git clone ssh://bandit29-git@bandit.labs.overthewire.org:2220/home/bandit29-git/repo
+    cd repo
+    cat README.md
+
+    git branch -a
+    git checkout dev
+    cat README.md
+}
+
+lvl 31 {
+    git clone ssh://bandit30-git@bandit.labs.overthewire.org:2220/home/bandit30-git/repo
+    cd repo
+    cat README.md
+
+    git tag
+    git show secret
+}
+
+lvl 32 {
+    git clone ssh://bandit31-git@bandit.labs.overthewire.org:2220/home/bandit31-git/repo
+    cd repo
+    cat README.md
+
+    echo "May I come in?" > key.txt
+    git add key.txt
+    git add -f key.txt
+    git commit -m "msg"
+    git push origin master
 }
