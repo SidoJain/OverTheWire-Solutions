@@ -234,3 +234,13 @@ lvl 32 {
     git commit -m "msg"
     git push origin master
 }
+
+lvl 33 {
+    $0
+    cat /etc/bandit_pass/bandit33
+}
+
+lvl 34 {
+    ls
+    cat README.md
+}
