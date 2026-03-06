@@ -110,6 +110,7 @@ lvl 19 {
 
 lvl 20 {
     ./bandit20-do ls /etc/bandit_pass/
+    ./bandit20-do cat /etc/bandit_pass/bandit20
 }
 
 lvl 21 {
@@ -141,7 +142,7 @@ lvl 24 {
     chmod 777 /tmp/8AWnBX3B
     nano get_pass.sh {
         #!/bin/bash
-        cat /etc/bandit_pass/bandit > /tmp/8AWnBX3B/password.txt
+        cat /etc/bandit_pass/bandit24 > /tmp/8AWnBX3B/password.txt
     }
 
     chmod 777 /tmp/8AWnBX3B/get_pass.sh
