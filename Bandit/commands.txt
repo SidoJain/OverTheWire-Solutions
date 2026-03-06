@@ -1,0 +1,246 @@
+lvl 0 {
+    ssh bandit0@bandit.labs.overthewire.org -p 2220
+}
+
+lvl 1 {
+    cat readme
+}
+
+lvl 2 {
+    cat ~/-
+}
+
+lvl 3 {
+    cat ~/"--spaces in this filename--"
+}
+
+lvl 4 {
+    cat ~/inhere/...Hiding-From-You
+}
+
+lvl 5 {
+    cd inhere
+    head ~/inhere/*
+}
+
+lvl 6 {
+    find . -type f -size 1033c ! -executable
+    cat ./inhere/maybehere07/.file2
+}
+
+lvl 7 {
+    find / -type f -size 33c -group bandit6 -user bandit7 2> /dev/null
+    cat /var/lib/dpkg/info/bandit7.password
+}
+
+lvl 8 {
+    grep "millionth" data.txt
+}
+
+lvl 9 {
+    sort data.txt | uniq -u
+}
+
+lvl 10 {
+    strings data.txt | grep "=="
+}
+
+lvl 11 {
+    base64 -d data.txt
+}
+
+lvl 12 {
+    cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+}
+
+lvl 13 {
+    mktemp -d /tmp/XXXXXXXXX
+    cd /tmp/ax1qhNJBN
+    cp ~/data.txt .
+
+    xxd -r data.txt > data.bin
+    file data.bin
+
+    mv data.bin data.gz
+    gunzip data.gz
+
+    bzip2 -d data
+
+    tar -xf data
+
+    cat data
+}
+
+lvl 14 {
+    cat sshkey.private
+    nano sshkey14.private
+    chmod 600 sshkey14.private
+
+    ssh -i sshkey14.private bandit14@bandit.labs.overthewire.org -p 2220
+    cat /etc/bandit_pass/bandit14
+}
+
+lvl 15 {
+    cat /etc/bandit_pass/bandit14 | nc localhost 30000
+}
+
+lvl 16 {
+    openssl s_client -connect localhost:30001
+}
+
+lvl 17 {
+    nmap -p 31000-32000 localhost
+    nmap -p 31046,31518,31691,31790,31960 -sV localhost
+    cat /etc/bandit_pass/bandit16 | openssl s_client -quiet -connect localhost:31790
+    exit
+
+    nano ssh17.key
+    chmod 600 ssh17.key
+    ssh -i ssh17.key bandit17@bandit.labs.overthewire.org -p 2220
+}
+
+lvl 18 {
+    diff passwords.new passwords.old
+}
+
+lvl 19 {
+    ssh bandit18@bandit.labs.overthewire.org -p 2220 -T
+    cat readme
+}
+
+lvl 20 {
+    ./bandit20-do ls /etc/bandit_pass/
+}
+
+lvl 21 {
+    cat /etc/bandit_pass/bandit20 | nc -l -p 1234
+    ./suconnect 1234
+}
+
+lvl 22 {
+    ls /etc/cron.d/
+    cat /etc/cron.d/cronjob_bandit22
+    cat /usr/bin/cronjob_bandit22.sh
+    cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+}
+
+lvl 23 {
+    ls /etc/cron.d/
+    cat /etc/cron.d/cronjob_bandit23
+    cat /usr/bin/cronjob_bandit23.sh
+    echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+    cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+}
+
+lvl 24 {
+    ls /etc/cron.d
+    cat /etc/cron.d/cronjob_bandit24
+    cat /usr/bin/cronjob_bandit24.sh
+
+    mktemp -d /tmp/XXXXXXXX
+    chmod 777 /tmp/8AWnBX3B
+    nano get_pass.sh {
+        #!/bin/bash
+        cat /etc/bandit_pass/bandit > /tmp/8AWnBX3B/password.txt
+    }
+
+    chmod 777 /tmp/8AWnBX3B/get_pass.sh
+    cp /tmp/8AWnBX3B/get_pass.sh /var/spool/bandit24/foo/
+    cat password.txt
+}
+
+lvl 25 {
+    mktemp -d /tmp/XXXXXX
+    nano get_pass.sh {
+        #!/bin/bash
+        pwd="place-password-for-lvl-24-here"
+
+        for i in {0000..9999}
+        do
+            echo "$pwd $i"
+        done
+    }
+
+    chmod +x get_pass.sh
+    ./get_pass.sh | nc localhost 30002 | grep -v "Wrong"
+}
+
+lvl 26 {
+    cat bandit26.sshkey
+    nano ssh26.key {
+        --- paste RSA ---
+    }
+    chmod 600 ssh26.key
+
+    cat /etc/passwd | grep bandit26
+    cat /usr/bin/showtext
+
+    --- resize terminal window to minimum ---
+    ssh -i ssh26.key bandit26@bandit.labs.overthewire.org -p 2220
+    v
+    :set shell=/bin/bash
+    :shell
+    cat /etc/bandit_pass/bandit26
+}
+
+lvl 27 {
+    ./bandit27-do whoami
+    ./bandit27-do cat /etc/bandit_pass/bandit27
+}
+
+lvl 28 {
+    git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo
+    cd repo
+    cat README
+}
+
+lvl 29 {
+    git clone ssh://bandit28-git@bandit.labs.overthewire.org:2220/home/bandit28-git/repo
+    cd repo
+    cat README.md
+
+    git log
+    git checkout 8b7c651b37ce7a94633b7b7b7c980ded19a16e4f
+    cat README.md
+}
+
+lvl 30 {
+    git clone ssh://bandit29-git@bandit.labs.overthewire.org:2220/home/bandit29-git/repo
+    cd repo
+    cat README.md
+
+    git branch -a
+    git checkout dev
+    cat README.md
+}
+
+lvl 31 {
+    git clone ssh://bandit30-git@bandit.labs.overthewire.org:2220/home/bandit30-git/repo
+    cd repo
+    cat README.md
+
+    git tag
+    git show secret
+}
+
+lvl 32 {
+    git clone ssh://bandit31-git@bandit.labs.overthewire.org:2220/home/bandit31-git/repo
+    cd repo
+    cat README.md
+
+    echo "May I come in?" > key.txt
+    git add key.txt
+    git add -f key.txt
+    git commit -m "msg"
+    git push origin master
+}
+
+lvl 33 {
+    $0
+    cat /etc/bandit_pass/bandit33
+}
+
+lvl 34 {
+    ls
+    cat README.md
+}
